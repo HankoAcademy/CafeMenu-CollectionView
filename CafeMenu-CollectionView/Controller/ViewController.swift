@@ -34,6 +34,12 @@ class ViewController: UIViewController {
         return collectionView
     }()
     
+    let menuHeaderView: MenuHeaderView = {
+        let headerView = MenuHeaderView()
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        return headerView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -47,10 +53,15 @@ class ViewController: UIViewController {
         menuCollectionView.dataSource = self
         menuCollectionView.delegate = self
         
+        view.addSubview(menuHeaderView)
         view.addSubview(menuCollectionView)
         
         NSLayoutConstraint.activate([
-            menuCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            menuHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            menuHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 26),
+            menuHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -26),
+            
+            menuCollectionView.topAnchor.constraint(equalTo: menuHeaderView.bottomAnchor, constant: 20),
             menuCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             menuCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             menuCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
@@ -90,8 +101,9 @@ extension ViewController: UICollectionViewDataSource {
             return UICollectionReusableView()
         }
         
+        headerView.configure(headerText: "Drinks")
+        
         return headerView
-//        return UICollectionReusableView()
     }
 }
 
@@ -104,10 +116,3 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 extension ViewController: UICollectionViewDelegate {
         
 }
-
-//extension ViewController: UICollectionViewDelegateFlowLayout {
-//
-////    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-////        return
-////    }
-//}

@@ -50,7 +50,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     private func activateConstraints() {
         NSLayoutConstraint.activate([
             headerLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             headerLabel.bottomAnchor.constraint(equalTo: bottomLineView.topAnchor, constant: -12),
             headerLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             
@@ -61,5 +61,12 @@ class HeaderCollectionReusableView: UICollectionReusableView {
             bottomLineView.trailingAnchor.constraint(equalTo: trailingAnchor),
             bottomLineView.heightAnchor.constraint(equalToConstant: 1)
         ])
+    }
+    
+    func configure(headerText: String) {
+        
+        let attributedString = NSMutableAttributedString(string: headerText)
+        attributedString.addAttribute(NSAttributedString.Key.kern, value: 14, range: NSRange(location: 0, length: attributedString.length))
+        headerLabel.attributedText = attributedString
     }
 }
