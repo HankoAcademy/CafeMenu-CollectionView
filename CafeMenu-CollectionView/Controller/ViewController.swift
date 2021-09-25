@@ -15,15 +15,19 @@ class ViewController: UIViewController {
         
         collectionViewFlowLayout.minimumLineSpacing = 20
         collectionViewFlowLayout.minimumInteritemSpacing = 10
-                
+        collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 //        collectionViewFlowLayout.itemSize = CGSize(width: view.frame.size.width/3-4, height: view.frame.size.width/3-4)
         
         collectionViewFlowLayout.itemSize = CGSize(width: view.frame.size.width/3-15, height: view.frame.size.width/2.5)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.layer.cornerRadius = 20
+        collectionView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
+        collectionView.backgroundColor = UIColor(named: "Cream")
         collectionView.register(MenuItemCollectionViewCell.self, forCellWithReuseIdentifier: MenuItemCollectionViewCell.identifier)
+        collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier)
         
         // Before we use a custom cell
         // collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "MenuItemCell")
@@ -32,8 +36,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .white
+                
         setUpUI()
     }
 
@@ -48,15 +51,19 @@ class ViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             menuCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            menuCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            menuCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             menuCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            menuCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
+            menuCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
 }
 
 extension ViewController: UICollectionViewDataSource {
         
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 3
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 30
     }
@@ -76,25 +83,31 @@ extension ViewController: UICollectionViewDataSource {
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier, for: indexPath) as? HeaderCollectionReusableView else {
+            assertionFailure("Could not dequeue \(HeaderCollectionReusableView.self)")
+            return UICollectionReusableView()
+        }
+        
+        return headerView
 //        return UICollectionReusableView()
-//    }
+    }
 }
 
-//extension ViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        return CGSize(width: view.frame.size.width, height: 200)
-//    }
-//
-//}
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.size.width, height: 50)
+    }
+}
 
 extension ViewController: UICollectionViewDelegate {
         
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return
-//    }
-}
+//extension ViewController: UICollectionViewDelegateFlowLayout {
+//
+////    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+////        return
+////    }
+//}
