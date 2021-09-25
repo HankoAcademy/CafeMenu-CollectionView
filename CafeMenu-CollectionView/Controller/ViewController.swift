@@ -15,20 +15,18 @@ class ViewController: UIViewController {
         
         collectionViewFlowLayout.minimumLineSpacing = 20
         collectionViewFlowLayout.minimumInteritemSpacing = 10
-        
+                
 //        collectionViewFlowLayout.itemSize = CGSize(width: view.frame.size.width/3-4, height: view.frame.size.width/3-4)
         
         collectionViewFlowLayout.itemSize = CGSize(width: view.frame.size.width/3-15, height: view.frame.size.width/2.5)
         
-        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.layer.cornerRadius = 20
-        collectionView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         collectionView.register(MenuItemCollectionViewCell.self, forCellWithReuseIdentifier: MenuItemCollectionViewCell.identifier)
         
-//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "MenuItemCell")
+        // Before we use a custom cell
+        // collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "MenuItemCell")
         return collectionView
     }()
     
@@ -58,6 +56,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UICollectionViewDataSource {
+        
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 30
     }
@@ -73,9 +72,7 @@ extension ViewController: UICollectionViewDataSource {
              assertionFailure("Expected to dequeue \(MenuItemCollectionViewCell.self) but found nil")
              return UICollectionViewCell()
          }
-         
-                                
-//        cell.contentView.backgroundColor = .red
+        
         return cell
     }
     
