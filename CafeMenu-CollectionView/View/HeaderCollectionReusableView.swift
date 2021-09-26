@@ -13,18 +13,18 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     private var headerLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textColor = .black
         label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Hello world"
         return label
     }()
     
     private var bottomLineView: UIView = {
         let line = UIView()
-        line.backgroundColor = UIColor(named: "Navy")
         line.translatesAutoresizingMaskIntoConstraints = false
+        line.backgroundColor = UIColor(named: "Navy")
         return line
     }()
     
@@ -49,12 +49,12 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     private func activateConstraints() {
         NSLayoutConstraint.activate([
-            headerLabel.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            headerLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            headerLabel.bottomAnchor.constraint(equalTo: bottomLineView.topAnchor, constant: -12),
+            headerLabel.bottomAnchor.constraint(equalTo: bottomLineView.topAnchor, constant: -5),
             headerLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            bottomLineView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: -12),
+//            bottomLineView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor),
             
             bottomLineView.leadingAnchor.constraint(equalTo: headerLabel.leadingAnchor),
             bottomLineView.bottomAnchor.constraint(equalTo: bottomAnchor),

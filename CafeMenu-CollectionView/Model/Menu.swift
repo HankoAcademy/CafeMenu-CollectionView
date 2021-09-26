@@ -12,21 +12,11 @@ protocol MenuItem {
     var name: String { get }
     var description: String { get }
     var price: Double { get }
-    var type: ProductType { get }
     
     init(withImageName imageName: String, withName name: String, withDescription description: String, withPrice price: Double)
 }
 
-enum ProductType {
-    case drinks, foods, merchAndOthers, misc
-}
-
 struct Menu {
-    
-    enum SortType {
-        case price, name
-    }
-    
     var drinks = [
         Drink(withImageName: "drinks_coffee", withName: "Drip Coffee",
               withDescription: "Our daily house drip coffee", withPrice: 2.0),
@@ -77,52 +67,6 @@ struct Menu {
         Merch(withImageName: "merch_filters", withName: "Coffee Filters",
               withDescription: "Chemex filters, packs of 100", withPrice: 6.5),
         MiscItem(withImageName: "other_newspaper", withName: "Newspaper",
-              withDescription: "Daily newspaper", withPrice: 3.5),
+              withDescription: "Daily newspaper", withPrice: 3.5)
     ]
-    
-    func sortMenu(bySortType sortType: SortType) -> Menu {
-        switch sortType {
-        case .name:
-            let sortedDrinks = drinks.sorted { $0.name < $1.name }
-            let sortedFoods = foods.sorted { $0.name < $1.name }
-            let sortedMerch = merchAndOthers.sorted { $0.name < $1.name }
-            
-            var menu = Menu()
-            menu.drinks = sortedDrinks
-            menu.foods = sortedFoods
-            menu.merchAndOthers = sortedMerch
-            return menu
-        case .price:
-            let sortedDrinks = drinks.sorted { $0.price < $1.price }
-            let sortedFoods = foods.sorted { $0.price < $1.price}
-            let sortedMerch = merchAndOthers.sorted { $0.price < $1.price }
-            
-            var menu = Menu()
-            menu.drinks = sortedDrinks
-            menu.foods = sortedFoods
-            menu.merchAndOthers = sortedMerch
-            return menu
-        }
-    }
-    
-    func generatePairings(forProductType productType: ProductType) -> [MenuItem] {
-        switch productType {
-        case .drinks:
-            var foodToShuffle = foods
-            foodToShuffle.shuffle()
-            return [foodToShuffle[0], foodToShuffle[1], foodToShuffle[2]]
-        case .foods:
-            var drinksToShuffle = drinks
-            drinksToShuffle.shuffle()
-            return [drinksToShuffle[0], drinksToShuffle[1], drinksToShuffle[2]]
-        case .merchAndOthers, .misc:
-            var foodToShuffle = foods
-            foodToShuffle.shuffle()
-            
-            var drinksToShuffle = drinks
-            drinksToShuffle.shuffle()
-            
-            return [drinksToShuffle[0], drinksToShuffle[1], foodToShuffle[2]]
-        }
-    }
 }
