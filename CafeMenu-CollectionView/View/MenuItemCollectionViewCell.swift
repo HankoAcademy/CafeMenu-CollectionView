@@ -88,12 +88,12 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor(named: "Cream")
+        view.layer.cornerRadius = 30
         return view
     }()
     
     private func activateConstraints() {
-        NSLayoutConstraint.activate([
-            
+        NSLayoutConstraint.activate([            
             imageContainerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
             imageContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             imageContainerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
@@ -103,13 +103,12 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
             imageView.leadingAnchor.constraint(equalTo: imageContainerView.leadingAnchor, constant: 8),
             imageView.bottomAnchor.constraint(equalTo: imageContainerView.bottomAnchor, constant: -8),
             imageView.trailingAnchor.constraint(equalTo: imageContainerView.trailingAnchor, constant: -8),
-
-            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
+            
+            titleLabel.topAnchor.constraint(greaterThanOrEqualTo: imageView.bottomAnchor, constant: 8),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             titleLabel.bottomAnchor.constraint(equalTo: priceLabel.topAnchor),
-
-            priceLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            
             priceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             priceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             priceLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
