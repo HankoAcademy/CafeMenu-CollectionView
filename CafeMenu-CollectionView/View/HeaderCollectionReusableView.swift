@@ -16,8 +16,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textColor = .black
-        label.textAlignment = .left
-        label.text = "Hello world"
+        label.textAlignment = .left        
         return label
     }()
     
@@ -53,8 +52,6 @@ class HeaderCollectionReusableView: UICollectionReusableView {
             headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             headerLabel.bottomAnchor.constraint(equalTo: bottomLineView.topAnchor, constant: -5),
             headerLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
-//            bottomLineView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor),
             
             bottomLineView.leadingAnchor.constraint(equalTo: headerLabel.leadingAnchor),
             bottomLineView.bottomAnchor.constraint(equalTo: bottomAnchor),

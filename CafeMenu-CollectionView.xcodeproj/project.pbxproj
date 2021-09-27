@@ -20,7 +20,6 @@
 		F3AD326026FEC73100B8A0D2 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AD325F26FEC73100B8A0D2 /* MenuViewController.swift */; };
 		F3AD326526FEC73200B8A0D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3AD326426FEC73200B8A0D2 /* Assets.xcassets */; };
 		F3AD326826FEC73200B8A0D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3AD326626FEC73200B8A0D2 /* LaunchScreen.storyboard */; };
-		F3AD327426FEC80B00B8A0D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AD327326FEC80B00B8A0D2 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		F3AD326426FEC73200B8A0D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3AD326726FEC73200B8A0D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3AD326926FEC73200B8A0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3AD327326FEC80B00B8A0D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +93,6 @@
 		F3AD327026FEC78500B8A0D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F3AD327326FEC80B00B8A0D2 /* ContentView.swift */,
 				F3A034D426FFA4D7004387DC /* MenuItemCollectionViewCell.swift */,
 				F3A034E026FFB8DF004387DC /* HeaderCollectionReusableView.swift */,
 				F3A034E226FFCDFA004387DC /* MenuHeaderView.swift */,
@@ -194,7 +191,6 @@
 				F3A034DD26FFA7A4004387DC /* Merch.swift in Sources */,
 				F3A034DE26FFA7A5004387DC /* Menu.swift in Sources */,
 				F3A034E326FFCDFA004387DC /* MenuHeaderView.swift in Sources */,
-				F3AD327426FEC80B00B8A0D2 /* ContentView.swift in Sources */,
 				F3A034DF26FFA7A5004387DC /* Drink.swift in Sources */,
 				F3AD325E26FEC73100B8A0D2 /* SceneDelegate.swift in Sources */,
 			);

@@ -22,8 +22,6 @@ class MenuViewController: UIViewController {
         collectionViewFlowLayout.minimumLineSpacing = 20
         collectionViewFlowLayout.minimumInteritemSpacing = 10
         collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-//        collectionViewFlowLayout.itemSize = CGSize(width: view.frame.size.width/3-4, height: view.frame.size.width/3-4)
-        
         collectionViewFlowLayout.itemSize = CGSize(width: view.frame.size.width/3-15, height: view.frame.size.width/2.5)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout)
@@ -34,9 +32,6 @@ class MenuViewController: UIViewController {
         collectionView.backgroundColor = UIColor(named: "Cream")
         collectionView.register(MenuItemCollectionViewCell.self, forCellWithReuseIdentifier: MenuItemCollectionViewCell.identifier)
         collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier)
-        
-        // Before we use a custom cell
-        // collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "MenuItemCell")
         return collectionView
     }()
     
@@ -106,12 +101,6 @@ extension MenuViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        // Before we create a custom cell
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuItemCell", for: indexPath)
-        
-        // After we create a custom cell
-        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuItemCell", for: indexPath) as? MenuItemCollectionViewCell else {
             assertionFailure("Expected to dequeue \(MenuItemCollectionViewCell.self) but found nil")
             return UICollectionViewCell()
