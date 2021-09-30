@@ -8,7 +8,6 @@
 import Foundation
 
 struct Food: MenuItem {
-    
     var imageName: String
     var name: String
     var description: String

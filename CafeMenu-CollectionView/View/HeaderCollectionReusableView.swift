@@ -9,7 +9,11 @@ import UIKit
 
 class HeaderCollectionReusableView: UICollectionReusableView {
     
+    // MARK: - Class Properties
+    
     static let identifier = "MenuItemHeader"
+    
+    // MARK: - UI Component Declarations
     
     private var headerLabel: UILabel = {
         let label = UILabel()
@@ -27,6 +31,8 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         return line
     }()
     
+    // MARK: - Initializers
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -37,6 +43,8 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - UI Setup Functions
     
     private func setupUI() {
         

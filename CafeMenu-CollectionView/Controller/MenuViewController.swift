@@ -13,7 +13,11 @@ class MenuViewController: UIViewController {
         case drinks, foods, merchAndOthers
     }
     
+    // MARK: - Class Properties
+    
     let menu: Menu
+    
+    // MARK: - UI Setup Functions
     
     lazy var menuCollectionView: UICollectionView = {
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -41,6 +45,8 @@ class MenuViewController: UIViewController {
         return headerView
     }()
     
+    // MARK: - Initializers
+    
     init(menu: Menu) {
         self.menu = menu
         
@@ -50,6 +56,8 @@ class MenuViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Lifecycle Methods
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +65,8 @@ class MenuViewController: UIViewController {
         setUpUI()
     }
 
+    // MARK: - UI Setup Functions
+    
     private func setUpUI() {
         
         view.backgroundColor = .white
@@ -79,6 +89,8 @@ class MenuViewController: UIViewController {
         ])
     }
 }
+
+// MARK: - UICollectionViewDataSource Methods
 
 extension MenuViewController: UICollectionViewDataSource {
         
@@ -108,7 +120,7 @@ extension MenuViewController: UICollectionViewDataSource {
         
         switch ProductType(rawValue: indexPath.section) {
         case .drinks:
-            let drink = menu.drinks[indexPath.row]
+            let drink = menu.drinks[indexPath.row]            
             cell.configure(imageName: drink.imageName, titleText: drink.name, price: drink.price)
             return cell
         case .foods:
@@ -147,6 +159,8 @@ extension MenuViewController: UICollectionViewDataSource {
         return headerView
     }
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout Methods
 
 extension MenuViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

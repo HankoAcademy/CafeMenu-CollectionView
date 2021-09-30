@@ -9,7 +9,11 @@ import UIKit
 
 class MenuItemCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Class Properties
+    
     static let identifier = "MenuItemCell"
+    
+    // MARK: - UI Component Declarations
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -37,6 +41,8 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    // MARK: - Initializers
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -61,7 +67,9 @@ class MenuItemCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-            
+    
+    // MARK: - UI Setup Functions
+    
     private func setUpUI() {
         // Round Corners
         layer.cornerRadius = 20
