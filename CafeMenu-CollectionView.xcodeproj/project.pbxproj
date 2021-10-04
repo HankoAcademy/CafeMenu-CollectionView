@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B4569A22709156E009A3FA3 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4569A12709156E009A3FA3 /* ItemCell.swift */; };
+		1B4569A427095D92009A3FA3 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4569A327095D92009A3FA3 /* BannerView.swift */; };
+		1B4569A8270964F0009A3FA3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4569A7270964F0009A3FA3 /* HeaderView.swift */; };
 		F3103FBD2702200600516710 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3103FBC2702200600516710 /* LaunchScreen.storyboard */; };
 		F3103FC42702204D00516710 /* MiscItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3103FBF2702204D00516710 /* MiscItem.swift */; };
 		F3103FC52702204D00516710 /* Merch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3103FC02702204D00516710 /* Merch.swift */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B4569A12709156E009A3FA3 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		1B4569A327095D92009A3FA3 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		1B4569A7270964F0009A3FA3 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		F3103FBC2702200600516710 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3103FBF2702204D00516710 /* MiscItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscItem.swift; sourceTree = "<group>"; };
 		F3103FC02702204D00516710 /* Merch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Merch.swift; sourceTree = "<group>"; };
@@ -48,6 +54,9 @@
 		F3103FBE2702200E00516710 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1B4569A12709156E009A3FA3 /* ItemCell.swift */,
+				1B4569A327095D92009A3FA3 /* BannerView.swift */,
+				1B4569A7270964F0009A3FA3 /* HeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,11 +182,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B4569A427095D92009A3FA3 /* BannerView.swift in Sources */,
 				F3103FC72702204D00516710 /* Food.swift in Sources */,
+				1B4569A22709156E009A3FA3 /* ItemCell.swift in Sources */,
 				F3103FC42702204D00516710 /* MiscItem.swift in Sources */,
 				F3103FC82702204D00516710 /* Menu.swift in Sources */,
 				F3AD326026FEC73100B8A0D2 /* ViewController.swift in Sources */,
 				F3AD325C26FEC73100B8A0D2 /* AppDelegate.swift in Sources */,
+				1B4569A8270964F0009A3FA3 /* HeaderView.swift in Sources */,
 				F3103FC52702204D00516710 /* Merch.swift in Sources */,
 				F3103FC62702204D00516710 /* Drink.swift in Sources */,
 				F3AD325E26FEC73100B8A0D2 /* SceneDelegate.swift in Sources */,
