@@ -15,7 +15,7 @@
 		F3103FC82702204D00516710 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3103FC32702204D00516710 /* Menu.swift */; };
 		F3AD325C26FEC73100B8A0D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AD325B26FEC73100B8A0D2 /* AppDelegate.swift */; };
 		F3AD325E26FEC73100B8A0D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AD325D26FEC73100B8A0D2 /* SceneDelegate.swift */; };
-		F3AD326026FEC73100B8A0D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AD325F26FEC73100B8A0D2 /* ViewController.swift */; };
+		F3AD326026FEC73100B8A0D2 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AD325F26FEC73100B8A0D2 /* MenuViewController.swift */; };
 		F3AD326526FEC73200B8A0D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3AD326426FEC73200B8A0D2 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +29,7 @@
 		F3AD325826FEC73100B8A0D2 /* CafeMenu-CollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CafeMenu-CollectionView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3AD325B26FEC73100B8A0D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3AD325D26FEC73100B8A0D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F3AD325F26FEC73100B8A0D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F3AD325F26FEC73100B8A0D2 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F3AD326426FEC73200B8A0D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3AD326926FEC73200B8A0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,7 +86,7 @@
 		F3AD326F26FEC77400B8A0D2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F3AD325F26FEC73100B8A0D2 /* ViewController.swift */,
+				F3AD325F26FEC73100B8A0D2 /* MenuViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -176,7 +176,7 @@
 				F3103FC72702204D00516710 /* Food.swift in Sources */,
 				F3103FC42702204D00516710 /* MiscItem.swift in Sources */,
 				F3103FC82702204D00516710 /* Menu.swift in Sources */,
-				F3AD326026FEC73100B8A0D2 /* ViewController.swift in Sources */,
+				F3AD326026FEC73100B8A0D2 /* MenuViewController.swift in Sources */,
 				F3AD325C26FEC73100B8A0D2 /* AppDelegate.swift in Sources */,
 				F3103FC52702204D00516710 /* Merch.swift in Sources */,
 				F3103FC62702204D00516710 /* Drink.swift in Sources */,

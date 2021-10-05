@@ -16,6 +16,10 @@ protocol MenuItem {
     init(withImageName imageName: String, withName name: String, withDescription description: String, withPrice price: Double)
 }
 
+enum MenuItems: Int, CaseIterable {
+    case drinks, foods, merchAndOthers
+}
+
 struct Menu {
     var drinks = [
         Drink(withImageName: "drinks_coffee", withName: "Drip Coffee",
