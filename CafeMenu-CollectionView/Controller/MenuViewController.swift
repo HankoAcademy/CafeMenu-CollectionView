@@ -24,6 +24,7 @@ class MenuViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(MenuItemDetailCollectionViewCell.self, forCellWithReuseIdentifier: "MenuItemDetailCell")
+        collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "MenuItemHeader")
         return collectionView
     }()
     
@@ -73,10 +74,6 @@ class MenuViewController: UIViewController {
 }
 
 extension MenuViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
@@ -104,7 +101,7 @@ extension MenuViewController: UICollectionViewDataSource {
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOFItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch MenuItems(rawValue: section) {
         case .drinks:
             return menu.drinks.count
@@ -116,8 +113,34 @@ extension MenuViewController: UICollectionViewDataSource {
             return 0
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier, for: indexPath) as? HeaderCollectionReusableView else {
+            return UICollectionReusableView()
+        }
+        
+        switch MenuItems(rawValue: indexPath.section) {
+        case .drinks:
+            headerView.configure(header: "Drinks")
+        case .foods:
+            headerView.configure(header: "Foods")
+        case .merchAndOthers:
+            headerView.configure(header: "Merch • Others")
+        case .none:
+            return UICollectionReusableView()
+        }
+        
+        return headerView
+    }
 }
 
 extension MenuViewController: UICollectionViewDelegate {
     
+}
+
+extension MenuViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.size.width, height: 50)
+    }
 }
