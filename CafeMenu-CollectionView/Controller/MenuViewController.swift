@@ -23,7 +23,7 @@ class MenuViewController: UIViewController {
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(MenuItemDetailCollectionViewCell.self, forCellWithReuseIdentifier: "MenuItemDetailCell")
         return collectionView
     }()
     
@@ -77,10 +77,44 @@ extension MenuViewController: UICollectionViewDataSource {
         return 5
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 3
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-        cell.contentView.backgroundColor = .lightGray
-        return cell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuItemDetailCollectionViewCell.identifier, for: indexPath) as? MenuItemDetailCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        switch MenuItems(rawValue: indexPath.section) {
+        case .drinks:
+            let drink = menu.drinks[indexPath.row]
+            cell.configure(imageName: drink.imageName, name: drink.name, price: drink.price)
+            return cell
+        case .foods:
+            let food = menu.foods[indexPath.row]
+            cell.configure(imageName: food.imageName, name: food.name, price: food.price)
+            return cell
+        case .merchAndOthers:
+            let merch = menu.merchAndOthers[indexPath.row]
+            cell.configure(imageName: merch.imageName, name: merch.name, price: merch.price)
+            return cell
+        case .none:
+            return UICollectionViewCell()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOFItemsInSection section: Int) -> Int {
+        switch MenuItems(rawValue: section) {
+        case .drinks:
+            return menu.drinks.count
+        case .foods:
+            return menu.foods.count
+        case .merchAndOthers:
+            return menu.merchAndOthers.count
+        case .none:
+            return 0
+        }
     }
 }
 

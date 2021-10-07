@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA39BD0B270D18CE00FD8787 /* MenuItemDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA39BD0A270D18CE00FD8787 /* MenuItemDetailCollectionViewCell.swift */; };
+		AA39BD0D270D1CD300FD8787 /* MenuItemIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA39BD0C270D1CD300FD8787 /* MenuItemIconView.swift */; };
 		F3103FBD2702200600516710 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3103FBC2702200600516710 /* LaunchScreen.storyboard */; };
 		F3103FC42702204D00516710 /* MiscItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3103FBF2702204D00516710 /* MiscItem.swift */; };
 		F3103FC52702204D00516710 /* Merch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3103FC02702204D00516710 /* Merch.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA39BD0A270D18CE00FD8787 /* MenuItemDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuItemDetailCollectionViewCell.swift; path = "CafeMenu-CollectionView/MenuItemDetailCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		AA39BD0C270D1CD300FD8787 /* MenuItemIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MenuItemIconView.swift; path = "CafeMenu-CollectionView/MenuItemIconView.swift"; sourceTree = SOURCE_ROOT; };
 		F3103FBC2702200600516710 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3103FBF2702204D00516710 /* MiscItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscItem.swift; sourceTree = "<group>"; };
 		F3103FC02702204D00516710 /* Merch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Merch.swift; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 		F3103FBE2702200E00516710 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AA39BD0A270D18CE00FD8787 /* MenuItemDetailCollectionViewCell.swift */,
+				AA39BD0C270D1CD300FD8787 /* MenuItemIconView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +184,8 @@
 				F3103FC82702204D00516710 /* Menu.swift in Sources */,
 				F3AD326026FEC73100B8A0D2 /* MenuViewController.swift in Sources */,
 				F3AD325C26FEC73100B8A0D2 /* AppDelegate.swift in Sources */,
+				AA39BD0D270D1CD300FD8787 /* MenuItemIconView.swift in Sources */,
+				AA39BD0B270D18CE00FD8787 /* MenuItemDetailCollectionViewCell.swift in Sources */,
 				F3103FC52702204D00516710 /* Merch.swift in Sources */,
 				F3103FC62702204D00516710 /* Drink.swift in Sources */,
 				F3AD325E26FEC73100B8A0D2 /* SceneDelegate.swift in Sources */,
