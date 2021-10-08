@@ -15,6 +15,12 @@ class MenuViewController: UIViewController {
     
     // MARK: - UI Properties
     
+    let logoView: MenuHeaderView = {
+       let logoView = MenuHeaderView()
+        logoView.translatesAutoresizingMaskIntoConstraints = false
+        return logoView
+    }()
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -56,6 +62,7 @@ class MenuViewController: UIViewController {
         
         collectionView.backgroundColor = .white
         
+        view.addSubview(logoView)
         view.addSubview(collectionView)
         
         setUpConstraints()
@@ -63,7 +70,12 @@ class MenuViewController: UIViewController {
     
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            logoView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            logoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            logoView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            
+            
+            collectionView.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 10),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),

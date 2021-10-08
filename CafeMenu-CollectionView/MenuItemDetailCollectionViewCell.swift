@@ -55,7 +55,7 @@ class MenuItemDetailCollectionViewCell: UICollectionViewCell {
     }
     
     private func setUpUI() {
-        contentView.backgroundColor = .brown
+        contentView.backgroundColor = UIColor(named: "MochaBrown")
         contentView.layer.cornerRadius = 20
         stackView.addArrangedSubview(menuItemIconView)
         stackView.addArrangedSubview(itemName)
