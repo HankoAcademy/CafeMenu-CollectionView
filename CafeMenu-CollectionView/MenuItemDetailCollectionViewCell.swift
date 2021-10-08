@@ -11,20 +11,11 @@ class MenuItemDetailCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "MenuItemDetailCell"
     
-    private let stackView: UIStackView = {
-       let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
-        stackView.spacing = 5
-        stackView.alignment = .center
-        return stackView
-    }()
-    
     private let menuItemIconView: MenuItemIconView = {
        let view = MenuItemIconView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
+        view.layer.cornerRadius = 25
         return view
     }()
     
@@ -33,6 +24,7 @@ class MenuItemDetailCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 12, weight: .bold)
         label.textColor = .black
+        label.textAlignment = .center
         return label
     }()
     
@@ -41,6 +33,7 @@ class MenuItemDetailCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 10, weight: .regular)
         label.textColor = .black
+        label.textAlignment = .center
         return label
     }()
     
@@ -57,22 +50,30 @@ class MenuItemDetailCollectionViewCell: UICollectionViewCell {
     private func setUpUI() {
         contentView.backgroundColor = UIColor(named: "MochaBrown")
         contentView.layer.cornerRadius = 20
-        stackView.addArrangedSubview(menuItemIconView)
-        stackView.addArrangedSubview(itemName)
-        stackView.addArrangedSubview(itemPrice)
         
-        
-        contentView.addSubview(stackView)
+        contentView.addSubview(menuItemIconView)
+        contentView.addSubview(itemName)
+        contentView.addSubview(itemPrice)
         
         setUpConstraints()
     }
     
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            menuItemIconView.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 20),
+            menuItemIconView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
+            menuItemIconView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
+            menuItemIconView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.4),
+            
+            
+            itemName.topAnchor.constraint(equalTo: menuItemIconView.bottomAnchor, constant: 8),
+            itemName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            itemName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            itemName.bottomAnchor.constraint(equalTo: itemPrice.topAnchor),
+            
+            itemPrice.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
+            itemPrice.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            itemPrice.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
         ])
     }
     

@@ -45,10 +45,10 @@ class MenuItemIconView: UIView {
     
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
-            menuItemImage.centerXAnchor.constraint(equalTo: centerXAnchor),
-            menuItemImage.centerYAnchor.constraint(equalTo: centerYAnchor),
-            menuItemImage.heightAnchor.constraint(equalToConstant: 40),
-            menuItemImage.widthAnchor.constraint(equalToConstant: 40),
+            menuItemImage.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            menuItemImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            menuItemImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
+            menuItemImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
         ])
     }
 }
