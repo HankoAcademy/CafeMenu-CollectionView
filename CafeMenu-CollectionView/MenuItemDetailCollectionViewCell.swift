@@ -48,8 +48,16 @@ class MenuItemDetailCollectionViewCell: UICollectionViewCell {
     }
     
     private func setUpUI() {
-        contentView.backgroundColor = UIColor(named: "MochaBrown")
         contentView.layer.cornerRadius = 20
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor.clear.cgColor
+        contentView.layer.backgroundColor = UIColor.white.cgColor
+        contentView.layer.shadowColor = UIColor.gray.cgColor
+        contentView.layer.shadowOffset = CGSize(width: 2.0, height: 4.0)
+        contentView.layer.shadowRadius = 2.0
+        contentView.layer.shadowOpacity = 1.0
+        
+        contentView.backgroundColor = UIColor(named: "MochaBrown")
         
         contentView.addSubview(menuItemIconView)
         contentView.addSubview(itemName)
