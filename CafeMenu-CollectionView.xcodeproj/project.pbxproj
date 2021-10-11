@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B985EF7A2714C7240014E53D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B985EF792714C7240014E53D /* ContentView.swift */; };
+		B985EF7D2714C76F0014E53D /* ProductDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B985EF7C2714C76F0014E53D /* ProductDetailCollectionViewCell.swift */; };
+		B985EF7F2714C7970014E53D /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B985EF7E2714C7970014E53D /* HeaderCollectionReusableView.swift */; };
 		F3103FBD2702200600516710 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3103FBC2702200600516710 /* LaunchScreen.storyboard */; };
 		F3103FC42702204D00516710 /* MiscItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3103FBF2702204D00516710 /* MiscItem.swift */; };
 		F3103FC52702204D00516710 /* Merch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3103FC02702204D00516710 /* Merch.swift */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B985EF792714C7240014E53D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "CafeMenu-CollectionView/View/ContentView.swift"; sourceTree = SOURCE_ROOT; };
+		B985EF7C2714C76F0014E53D /* ProductDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		B985EF7E2714C7970014E53D /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		F3103FBC2702200600516710 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3103FBF2702204D00516710 /* MiscItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscItem.swift; sourceTree = "<group>"; };
 		F3103FC02702204D00516710 /* Merch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Merch.swift; sourceTree = "<group>"; };
@@ -45,9 +51,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F3103FBE2702200E00516710 /* View */ = {
+		B985EF7B2714C73F0014E53D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B985EF792714C7240014E53D /* ContentView.swift */,
+				B985EF7C2714C76F0014E53D /* ProductDetailCollectionViewCell.swift */,
+				B985EF7E2714C7970014E53D /* HeaderCollectionReusableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -72,7 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				F3AD327126FEC78800B8A0D2 /* Model */,
-				F3103FBE2702200E00516710 /* View */,
+				B985EF7B2714C73F0014E53D /* View */,
 				F3AD326F26FEC77400B8A0D2 /* Controller */,
 				F3AD325B26FEC73100B8A0D2 /* AppDelegate.swift */,
 				F3AD325D26FEC73100B8A0D2 /* SceneDelegate.swift */,
@@ -94,9 +103,9 @@
 		F3AD327126FEC78800B8A0D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F3103FC32702204D00516710 /* Menu.swift */,
 				F3103FC12702204D00516710 /* Drink.swift */,
 				F3103FC22702204D00516710 /* Food.swift */,
-				F3103FC32702204D00516710 /* Menu.swift */,
 				F3103FC02702204D00516710 /* Merch.swift */,
 				F3103FBF2702204D00516710 /* MiscItem.swift */,
 			);
@@ -174,10 +183,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3103FC72702204D00516710 /* Food.swift in Sources */,
+				B985EF7F2714C7970014E53D /* HeaderCollectionReusableView.swift in Sources */,
 				F3103FC42702204D00516710 /* MiscItem.swift in Sources */,
 				F3103FC82702204D00516710 /* Menu.swift in Sources */,
 				F3AD326026FEC73100B8A0D2 /* ViewController.swift in Sources */,
 				F3AD325C26FEC73100B8A0D2 /* AppDelegate.swift in Sources */,
+				B985EF7D2714C76F0014E53D /* ProductDetailCollectionViewCell.swift in Sources */,
+				B985EF7A2714C7240014E53D /* ContentView.swift in Sources */,
 				F3103FC52702204D00516710 /* Merch.swift in Sources */,
 				F3103FC62702204D00516710 /* Drink.swift in Sources */,
 				F3AD325E26FEC73100B8A0D2 /* SceneDelegate.swift in Sources */,
