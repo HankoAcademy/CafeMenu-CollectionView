@@ -6,13 +6,13 @@
 
 This project is an extension of the Cafe App built using UITableViews but is replaced with a new design to replace UITableView with UICollectionView.
 
-## What you'll learn
+## What I Learned
 
 * How to add a UICollectionView
 * Custom collection view cells by subclassing UICollectionViewCell
 * UICollectionViewDataSource & UICollectionViewDelegate
-* Adding Headers and Footer to UICollectionViews 
+* How to add Headers and Footer to UICollectionViews 
 
-## What you'll be building
+## What I Built
 
-Let's say you have a thriving Cafe business. This app shows all the products you sell from the wide variety of drinks, food items, and merch! Instead of customers having to use QR codes or grabbing a menu that thousands of others have touched, they can conveniently access your menu at any time through the app. Each item has its name, an image, as well as its price.
+Let's say Pirates decided to open a coffee shop. This app shows all the products they would sell from the wide variety of drinks, food items, and merch! Instead of customers having to use QR codes or grabbing a menu that thousands of others have touched, they can conveniently access the menu at any time through the app. Each item has its name, an image, as well as its price.
